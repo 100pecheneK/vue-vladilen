@@ -1,0 +1,27 @@
+module.exports = {
+	root: true,
+	env: {
+		node: true,
+	},
+	extends: ['plugin:vue/vue3-essential', 'eslint:recommended', '@vue/prettier'],
+	parserOptions: {
+		parser: 'babel-eslint',
+	},
+	rules: {
+		indent: ['warn', 'tab'],
+		'vue/no-unused-components': ['warn'],
+		'vue/no-unused-vars': ['warn'],
+		'prettier/prettier': [
+			'warn',
+			{
+				singleQuote: true,
+				semi: false,
+				trailingComma: 'all',
+				useTabs: true,
+				tabWidth: 2,
+			},
+		],
+		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+	},
+}
