@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charet='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Vue</title>
+  <link rel='stylesheet' href='theme.css' />
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container pt-5' id='app' v-cloak>
+    <div class='card center'>
+      <div v-html="html"></div>
+      <h1 v-text="title"></h1>
+      <h2 v-once>{{title}}</h2>
+      <h2 v-pre>{{title}}</h2>
+      <div class='form-control'>
+        <input type='text' @keydown.enter.exact="addNumber" ref="numberInput">
+      </div>
+      <ul class='list'>
+        <li class='list-item' v-for="item in 5">
+          {{item}}
+        </li>
+      </ul>
+      <ul class='list'>
+        <li class='list-item' v-for="(personValue, personKey) in person">
+          {{personKey}}: {{personValue}}
+        </li>
+      </ul>
+      <ul class='list'>
+        <li class='list-item' v-for="evenNumber in evenNumbers">
+          {{evenNumber}}
+        </li>
+      </ul>
+      <ul class='list' v-if="numbers.length">
+        <li class='list-item pointer' v-for="(number, numberIndex) in numbers" @click.right.prevent="onNumberDelete(numberIndex), log(number)"
+          :key="number">
+          {{number}}
+          <input type='text' @click.stop>
+        </li>
+      </ul>
+      <h3 v-show="numbers.length === 0">You deleted all of them :(</h3>
+    </div>
+  </div>
+  <script src='https://unpkg.com/vue@next'></script>
+  <script src='app.js'></script>
+</body>
+
+</html>

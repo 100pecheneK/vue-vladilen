@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charet='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Vue</title>
+  <link rel='stylesheet' href='theme.css' />
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container pt-5' id='app' v-cloak></div>
+  <div class='container pt-5' id='app2' v-cloak>
+    <div class='card center'>
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <script src='https://unpkg.com/vue@next'></script>
+  <script src='app.js'></script>
+  <!-- <script src="proxyExample.js"></script> -->
+</body>
+
+</html>
